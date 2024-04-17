@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="parent flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl font-bold mb-8">
-        Selected Option: {selectedOption || 'None'}
+      Parent Component: {selectedOption || 'None'}
       </h1>
       <div className="flex space-x-4">
         <ChildComponent1 onOptionSelect={handleOptionSelect} />
