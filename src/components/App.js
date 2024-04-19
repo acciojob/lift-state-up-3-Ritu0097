@@ -1,25 +1,20 @@
-import React, { useState } from 'react';
-import ChildComponent1 from './ChildComponent1';
-import ChildComponent2 from './ChildComponent2';
-
+import React from 'react'
+import Tooltip from './Tooltip'
+import './App.css'
 const App = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
+	return (
+		<div>
+			<h2 class="tooltip">
+				<Tooltip text="This is a tooltip">Hover over me</Tooltip>
+			</h2>
+			<br />
+			<p class="tooltip">
+				<Tooltip text="This is another tooltip">
+					Hover over me to see another tooltip
+				</Tooltip>
+			</p>
+		</div>
+	)
+}
 
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);
-  };
-
-  return (
-    <div className="parent flex flex-col items-center justify-center h-screen">
-      <h1 className="text-2xl font-bold mb-8">
-      Parent Component: {selectedOption || 'None'}
-      </h1>
-      <div className="flex space-x-4">
-        <ChildComponent1 onOptionSelect={handleOptionSelect} />
-        <ChildComponent2 onOptionSelect={handleOptionSelect} />
-      </div>
-    </div>
-  );
-};
-
-export default App;
+export default App
